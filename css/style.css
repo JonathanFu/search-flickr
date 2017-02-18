@@ -1,0 +1,87 @@
+
+.light-blue{
+  background-color: rgb(0, 174, 239);
+}
+
+.search-icon{
+  padding-left: 2rem;
+}
+
+@media only screen and (min-width: 601px){
+  nav{
+    height: 85px;
+    line-height: 85px;
+  }
+  .search-icon{
+    line-height: 85px!important;
+  }
+  .header-search-input {
+    height: 60px!important;
+    font-size: 1.5rem!important;
+    padding-bottom: 3px!important;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .search-icon{
+    line-height: 54px;
+  }
+  .header-search-input{
+    height: 45px!important;
+  }
+}
+
+@media only screen and (min-width: 1280px){
+  .row .col.l3 {
+    width: 16.66%;
+  }
+}
+
+.header-search-input{
+  background: rgba(255,255,255,0.4)!important;
+  border-radius: 5px!important;
+  margin-left: 0 !important;
+  padding-left: 5rem!important;
+  color: white;
+  width:60%;
+}
+
+.header-search-input:focus{
+  background: rgba(255,255,255,0.9)!important;
+  color: #333;
+  width:100%;
+}
+
+.flickr .card-image{
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.flickr .card-content{
+  height: 80px;
+}
+
+.flickr .card-action{
+  height: 100px;
+  padding: 5px;
+}
+
+.card .card-image img{
+  height: 100%;
+}
+
+.flickr .card-action span.tag {
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: #fff;
+  background-color: #26a69a;
+  border-radius: 2px;
+  padding: 5px;
+  word-wrap:break-word;
+  line-height: 30px;
+}
+
+.flickr.card:hover{
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
