@@ -27,13 +27,13 @@
 
             var searchHandler = function () {
 
+                $scope.message = '';
+                $scope.images = {};
                 if (!$scope.tags) {
                     return false;
                 }
 
                 $scope.searching = true;
-                $scope.message = '';
-                $scope.images = {};
                 $scope.form.tags.$setUntouched();
                 $scope.form.tags.$setValidity();
 
