@@ -114,3 +114,12 @@ body{
 .tagList ul li:hover{
   cursor: pointer;
 }
+
+#imageModal{
+  height: auto;
+  max-height: 100%;
+}
+
+#imageModal .responsive-img{
+  width: 100%;
+}

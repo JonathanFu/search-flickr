@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Search Flickr with AngularJS</title>
-  <!--<link data-require="materializecss@0.96.1" data-semver="0.96.1" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css" />-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Materialize CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
   <link rel="stylesheet" href="css/style.css">
-  
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="js/index.js"></script>
 </head>
 
-<body ng-app="searchFlickr" ng-controller="FlickrController">
+<body ng-app="searchFlickr" ng-controller="SearchController">
 <main>
 
     <nav class="light-blue" role="navigation">
@@ -47,12 +48,12 @@
 
         <div class="col s12" id="message">{{message}}</div>
 
-        <figure class="added-fig" ng-repeat="i in images" ng-show="images.length">
+        <figure ng-repeat="i in images" ng-show="images.length > 0">
 
             <div class="col s12 m6 l3">
               <div class="card flickr">
                 <div class="card-image waves-effect waves-block waves-light">
-                  <img materialboxed class="materialboxed responsive-img" data-caption="{{i.description}}" width="250" src="{{i.media.m}}" />
+                  <a href="{{i.link}}" target="_blank"><img materialboxed class="materialboxed responsive-img" data-caption="{{i.description}}" width="250" src="{{i.media.m}}"/></a>
                 </div>
                   <div class="card-content">
                     <i class="material-icons prefix">person</i>
@@ -69,12 +70,6 @@
     </div>
 
 </main>
-  <!-- JavaScript for: jQuery, angular, materialize, and angular-materialize. All of which are needed. -->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
-  <script src="js/index.js"></script>
 
 </body>
 

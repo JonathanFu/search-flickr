@@ -1,11 +1,12 @@
 (function (angular) {
     'use strict';
-    angular.module('searchFlickr', ['ui.materialize'])
-        .controller('FlickrController', ['$scope', '$http', '$sce', function ($scope, $http, $sce) {
+    angular.module('searchFlickr', [])
+        .controller('SearchController', ['$scope', '$http', '$sce', function ($scope, $http, $sce) {
 
             $scope.searching = false;
             $scope.message = '';
             $scope.images = {};
+            $scope.imagLink = '';
 
             $scope.search = function () {
                 searchHandler();
@@ -23,7 +24,6 @@
                 $scope.tags = event.target.dataset.tag;
                 searchHandler();
             };
-
 
             var searchHandler = function () {
 
