@@ -27,7 +27,7 @@
                      name="tags"
                      type="text"
                      class="header-search-input"
-                     placeholder="Search Flickr"
+                     placeholder="Search Flickr by tag"
                      ng-change="search(tags);document.getElementsByName('tags').focus();"
                      ng-focus="inputFocus(true)"
                      ng-blur="inputFocus(false)"
@@ -60,7 +60,7 @@
                     <span class="activator grey-text text-darken-4">{{i.author}}</span>
                   </div>
                   <div class="card-action row tagList">
-                    <div ng-bind-html="renderHtml(i.tagList)" ng-click="searchTag(this, $event);$event.stopPropagation();"/>
+                    <div class="bindDiv" ng-bind-html="renderHtml(i.tagList)" ng-click="searchTag(this, $event);$event.stopPropagation();"/>
                   </div>
                 </div>
             </div>

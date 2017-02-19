@@ -63,16 +63,23 @@ body{
 }
 
 .flickr .card-content{
-  height: 60px;
+  height: 80px;
 }
 
 .flickr .card-content span{
   line-height: 1.2!important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 25px;
 }
 
 .flickr .card-action{
   height: 120px;
   padding: 5px;
+}
+
+.flickr .card-action .bindDiv{
+ margin-top: -5px;
 }
 
 .card .card-image img{
