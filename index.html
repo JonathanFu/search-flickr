@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Search Flickr with AngularJS</title>
-  <link data-require="materializecss@0.96.1" data-semver="0.96.1" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css" />
+  <!--<link data-require="materializecss@0.96.1" data-semver="0.96.1" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css" />-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
   <link rel="stylesheet" href="css/style.css">
   
 </head>
 
-<body>
-
-
-  <section class="row" ng-app="formFlickr" ng-controller="FlickrController">
+<body ng-app="searchFlickr" ng-controller="FlickrController">
+<main>
 
     <nav class="light-blue" role="navigation">
       <div class="nav-wrapper container center">
@@ -20,14 +20,14 @@
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons search-icon prefix">search</i>
-              <input id="searchCriteria"
-                     ng-model="searchCriteria.tags"
+              <input id="tags"
+                     ng-model="tags"
                      ng-target="form.tags"
                      name="tags"
                      type="text"
                      class="header-search-input"
-                     placeholder="Search tag"
-                     ng-change="search(searchCriteria);document.getElementsByName('tags').focus();"
+                     placeholder="Search Flickr"
+                     ng-change="search(tags);document.getElementsByName('tags').focus();"
                      ng-focus="inputFocus(true)"
                      ng-blur="inputFocus(false)"
                     />
@@ -38,7 +38,6 @@
       </div>
     </nav>
 
-
     <div id="images" class="app-container">
       <div class="row">
 
@@ -48,37 +47,34 @@
 
         <div class="col s12" id="message">{{message}}</div>
 
-        <figure class="added-fig" ng-repeat="i in images">
+        <figure class="added-fig" ng-repeat="i in images" ng-show="images.length">
 
             <div class="col s12 m6 l3">
               <div class="card flickr">
                 <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator " class="added-img" data-caption="A picture of some deer and tons of trees" width="250" src="{{i.media.m}}" />
+                  <img materialboxed class="materialboxed responsive-img" data-caption="{{i.description}}" width="250" src="{{i.media.m}}" />
                 </div>
                   <div class="card-content">
                     <i class="material-icons prefix">person</i>
                     <span class="activator grey-text text-darken-4">{{i.author}}</span>
                   </div>
-                  <div class="card-action row">
-                    <div ng-bind-html="renderHtml(i.tagList)"/>
+                  <div class="card-action row tagList">
+                    <div ng-bind-html="renderHtml(i.tagList)" ng-click="searchTag(this, $event);$event.stopPropagation();"/>
                   </div>
                 </div>
             </div>
+
         </figure>
       </div>
     </div>
 
-  </div>
-</section>
-
-
-  <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script>
-  <!--<script data-require="angular.js@2.0.0" data-semver="2.0.0" src="https://code.angularjs.org/2.0.0-snapshot/angular2.js"></script>-->
-  <!--<script data-require="jquery@2.2.4" data-semver="2.2.4" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>-->
-
-  <!--<script data-require="materializecss@0.96.1" data-semver="0.96.1" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js" ></script>-->
-    <script src="js/index.js"></script>
-
+</main>
+  <!-- JavaScript for: jQuery, angular, materialize, and angular-materialize. All of which are needed. -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
+  <script src="js/index.js"></script>
 
 </body>
 

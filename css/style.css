@@ -1,3 +1,6 @@
+body{
+  background-color: #f9f9f9;
+}
 
 .light-blue{
   background-color: rgb(0, 174, 239);
@@ -10,15 +13,16 @@
 @media only screen and (min-width: 601px){
   nav{
     height: 85px;
-    line-height: 85px;
+    line-height: 90px;
   }
   .search-icon{
-    line-height: 85px!important;
+    line-height: 80px!important;
+    font-size: 2.5rem!important;
   }
   .header-search-input {
     height: 60px!important;
-    font-size: 1.5rem!important;
-    padding-bottom: 3px!important;
+    font-size: 2rem!important;
+    padding-bottom: 5px!important;
   }
 }
 
@@ -33,7 +37,7 @@
 
 @media only screen and (min-width: 1280px){
   .row .col.l3 {
-    width: 16.66%;
+    width: 20%;
   }
 }
 
@@ -59,11 +63,15 @@
 }
 
 .flickr .card-content{
-  height: 80px;
+  height: 60px;
+}
+
+.flickr .card-content span{
+  line-height: 1.2!important;
 }
 
 .flickr .card-action{
-  height: 100px;
+  height: 120px;
   padding: 5px;
 }
 
@@ -78,10 +86,31 @@
   background-color: #26a69a;
   border-radius: 2px;
   padding: 5px;
-  word-wrap:break-word;
   line-height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .flickr.card:hover{
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.tagList ul{
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 90px;
+  padding: 0 2px;
+}
+
+.tagList ul:hover{
+  background-color: #f1f1f1;
+}
+
+.tagList ul li {
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.tagList ul li:hover{
+  cursor: pointer;
 }
