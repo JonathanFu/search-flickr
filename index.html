@@ -2,19 +2,17 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Search Flickr with AngularJS</title>
+  <title>Search Flickr</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Materialize CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
   <link rel="stylesheet" href="css/style.css">
-
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
   <script src="js/index.js"></script>
 </head>
 
 <body ng-app="searchFlickr" ng-controller="SearchController">
-<main>
-
+  <main>
     <nav class="light-blue" role="navigation">
       <div class="nav-wrapper container center">
         <form name="form" class="col s12">
@@ -48,7 +46,7 @@
 
         <div class="col s12" id="message">{{message}}</div>
 
-        <figure ng-repeat="i in images" ng-show="images.length > 0">
+          <figure ng-repeat="i in images" ng-show="images.length > 0">
 
             <div class="col s12 m6 l3">
               <div class="card flickr">
@@ -60,16 +58,15 @@
                     <span class="activator grey-text text-darken-4">{{i.author}}</span>
                   </div>
                   <div class="card-action row tagList">
-                    <div class="bindDiv" ng-bind-html="renderHtml(i.tagList)" ng-click="searchTag(this, $event);$event.stopPropagation();"/>
-                  </div>
+                    <div class="bindDiv" ng-bind-html="renderHtml(i.tagList)" ng-click="searchTag(this, $event);$event.stopPropagation();"></div>
                 </div>
+              </div>
             </div>
 
-        </figure>
+          </figure>
       </div>
     </div>
-
-</main>
+  </main>
 
 </body>
 
