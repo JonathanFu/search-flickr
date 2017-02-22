@@ -21,7 +21,7 @@
       };
 
       $scope.searchTag = function (obj, event) {
-        if (event.target.dataset.tag) return false;
+        if (!event.target.dataset.tag) return false;
         $scope.tags = event.target.dataset.tag;
         searchHandler();
       };
